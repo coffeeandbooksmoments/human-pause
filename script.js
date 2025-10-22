@@ -1,5 +1,3 @@
-
-/* Human Pause script - bilingual */
 (function(){
   const pauseBtn = document.getElementById('pauseBtn');
   const timerEl = document.getElementById('timer');
@@ -29,7 +27,7 @@
 
   let audioCtx = null;
   let noiseNode = null;
-  let currentSound = null; // will be set randomly per pause
+  let currentSound = null;
 
   function createNoise(type){
     if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -82,7 +80,7 @@
   }
 
   function cycleSoundLabel(type){
-    soundBtn.textContent = 'Sound / Zvuk: ' + (type==='rain'?'Rain / Kiša':(type==='coffee'?'Coffee / Kafić':'Off / Isključeno'));
+    soundBtn.textContent = 'Sound: ' + (type==='rain'?'Rain':(type==='coffee'?'Coffee':'Off'));
   }
 
   function startBreathingGuide(){
@@ -146,9 +144,9 @@
   breathBtn.addEventListener('click', ()=> startBreathingGuide());
 
   shareBtn.addEventListener('click', async ()=>{
-    const shareText = "Take a 30s Human Pause / Napravi 30s pauzu: a moment of calm.";
+    const shareText = "Take a 30s Human Pause — a moment of calm.";
     if(navigator.share){
-      try{ await navigator.share({title:'Human Pause', text:shareText, url:location.href}); }catch(e){} 
+      try{ await navigator.share({title:'Human Pause', text:shareText, url:location.href}); }catch(e){}
     } else {
       shareArea.classList.toggle('hidden');
       shareInput.value = location.href;
@@ -158,8 +156,8 @@
   copyBtn.addEventListener('click', ()=>{
     shareInput.select();
     document.execCommand('copy');
-    copyBtn.textContent = 'Copied! / Kopirano!';
-    setTimeout(()=>copyBtn.textContent='Copy link / Kopiraj link',1200);
+    copyBtn.textContent = 'Copied!';
+    setTimeout(()=>copyBtn.textContent='Copy link',1200);
   });
 
   document.addEventListener('keydown',(e)=>{ if(e.code==='Space'){ e.preventDefault(); if(!pauseBtn.disabled) beginPause(); } });
