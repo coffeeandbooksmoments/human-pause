@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Human Pause — a moment of calm / trenutak mira</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-live="polite">
+      <div class="header">
+        <div class="logo" aria-hidden="true">H</div>
+        <div>
+          <h1 class="title">Human Pause</h1>
+          <p class="subtitle">a moment of calm / trenutak mira</p>
+        </div>
+      </div>
+
+      <div class="scene" id="scene" aria-hidden="false">
+        <div class="bg-anim" aria-hidden="true"></div>
+        <svg class="steam" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="none" stroke="#C8B7A8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+            <path d="M30 180 C20 140 40 120 30 80" stroke-opacity="0.9" style="animation:rise 4s linear infinite;"></path>
+            <path d="M50 180 C40 140 60 120 50 80" stroke-opacity="0.75" style="animation:rise 5s linear infinite;"></path>
+            <path d="M70 180 C60 140 80 120 70 80" stroke-opacity="0.6" style="animation:rise 6s linear infinite;"></path>
+          </g>
+        </svg>
+
+        <div id="visualContent" style="text-align:center;max-width:420px;z-index:2">
+          <div class="pill" id="moodPill">Ready for a 30s Pause / Spremni za 30s pauzu</div>
+          <div class="timer hidden" id="timer" aria-live="polite">0</div>
+          <div class="quote" id="quote">Click “Take a Pause / Napravi pauzu” to begin — a short moment to breathe and reset.</div>
+        </div>
+      </div>
+
+      <div class="controls" role="toolbar" aria-label="Pause controls">
+        <button class="big" id="pauseBtn">Take a Pause / Napravi pauzu</button>
+        <button class="ghost" id="soundBtn">Sound / Zvuk: Rain</button>
+        <button class="ghost" id="breathBtn">Breathing Guide / Vođeno disanje</button>
+        <button class="ghost" id="shareBtn">Share / Podijeli</button>
+      </div>
+
+      <div class="small">Tip / Savjet: use this micro ritual anywhere — work, kitchen, or before sleep.</div>
+
+      <div class="share hidden" id="shareArea">
+        <input id="shareInput" readonly style="border:1px solid #EFE8E2;padding:8px 10px;border-radius:8px;width:65%" value="https://your-site.example/human-pause">
+        <button class="ghost" id="copyBtn">Copy link / Kopiraj link</button>
+      </div>
+
+      <div class="footer">by Coffee & Books Moments ☕</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+:root{
+  --bg:#F7F5F3;
+  --card:#FFFFFF;
+  --accent:#D9CBBF;
+  --muted:#7A6B5A;
+  --text:#222;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, Arial, sans-serif;background:linear-gradient(180deg,var(--bg),#FFFFFF);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
+.card{width:100%;max-width:760px;background:var(--card);border-radius:18px;box-shadow:0 10px 30px rgba(30,30,30,0.06);padding:28px;box-sizing:border-box;overflow:hidden;opacity:0;transform:translateY(8px);animation:fadeIn 600ms ease forwards 120ms}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#EFE7E2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);font-size:20px}
+.title{font-size:20px;color:var(--text);margin:0}
+.subtitle{font-size:13px;color:var(--muted);margin:0}
+.scene{height:320px;border-radius:12px;background:linear-gradient(180deg,#FFF,#FBF8F6);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-bottom:18px}
+.steam{position:absolute;left:24px;top:20px;width:160px;height:260px;opacity:0.9;pointer-events:none}
+.controls{display:flex;gap:12px;align-items:center;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+button.big{background:var(--muted);color:white;border:none;padding:12px 22px;border-radius:10px;font-size:16px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+button.ghost{background:transparent;border:1px solid #E6E0D9;color:var(--muted);padding:10px 14px;border-radius:10px;cursor:pointer}
+.timer{font-size:48px;font-weight:600;color:var(--muted);margin-top:12px;text-align:center}
+.quote{font-size:16px;color:var(--muted);text-align:center;padding:12px 24px;min-height:48px;display:flex;align-items:center;justify-content:center}
+.small{font-size:12px;color:#9A8F86;text-align:center;margin-top:10px}
+.share{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.pill{background:#F3EEE9;color:var(--muted);padding:8px 12px;border-radius:999px;font-size:13px}
+.footer{font-size:12px;color:#B9B4AE;text-align:center;margin-top:16px}
+.hidden{display:none}
+@media (max-width:600px){ .card{padding:18px} .scene{height:260px} .timer{font-size:40px} }
